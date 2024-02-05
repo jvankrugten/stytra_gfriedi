@@ -2,6 +2,8 @@
 Stytra
 ======
 
+§a change made by Jaap to test git
+
 A modular package to control stimulation and track behavior in zebrafish experiments.
 ---------------
 
