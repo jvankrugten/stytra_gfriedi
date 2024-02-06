@@ -33,15 +33,21 @@ if __name__ == "__main__":
     
     # set up Transmission Control Protocol
     self.tcp_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)  # instantiate TCP/IP socket for communication
-    self.tcp_socket.connect(("localhost", 6341))  # open socket on 127.0.0.1 with specified port 6341
+    self.tcp_socket.connect(("f462i-8840e6", 12345))  # open socket on f462i-8840e6 with specified port 12345
+    
+    data = "Hello, server!"
+    s.sendall(data.encode())
+    print(f"Sent data to server: {data}")
+
+
 
     # set up data to send, something like: 
-    fish_vel = self._experiment.estimator.get_velocity()
-    fish_vel_insta = self._experiment.estimator.get_istantaneous_velocity()
-    fish_bouts = self._experiment.estimator.get_bout_occured()
+    #fish_vel = self._experiment.estimator.get_velocity()
+    #fish_vel_insta = self._experiment.estimator.get_istantaneous_velocity()
+    #fish_bouts = self._experiment.estimator.get_bout_occured()
 
     # make datagram from tcp/ip
-    sData = struct.pack('>ddddi', fish_vel,fish_vel_insta,fish_bouts) #change the '>ddddi' to the data types and byte order of the data
+    #sData = struct.pack('>ddddi', fish_vel,fish_vel_insta,fish_bouts) #change the '>ddddi' to the data types and byte order of the data
     # tcp/ip connection: send datagram
     self.tcp_socket.sendall(sData)
     # 
