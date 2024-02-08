@@ -3,7 +3,7 @@ import socket
 def main():
     # Host and port
     HOST = 'f462i-8840e6'  # Loopback address
-    PORT = 12345        # Arbitrary port number
+    PORT = 12346        # Arbitrary port number
 
     # Create a socket object
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
